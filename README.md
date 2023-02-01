@@ -56,7 +56,7 @@ group_posts(): передаёт в шаблон posts/group_list.html десят
 # Авторы:
 ЯП и Лара Павлова
 e-mail: abastrenie@mail.ru
-Лицензия Copyright (c) 2022 
+Лицензия Copyright (c) 2023 
 
 
 

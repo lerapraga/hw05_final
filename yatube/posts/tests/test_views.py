@@ -9,6 +9,8 @@ from ..settings import PER_PAGE
 
 TOTAL_POSTS = PER_PAGE + 1
 INDEX = reverse('posts:index')
+HTTP_404_NOT_FOUND = 404
+HTTP_403_FORBIDDEN = 403
 
 
 class PostURLTests(TestCase):
@@ -200,12 +202,12 @@ class PostURLTests(TestCase):
         """Тест на проверку 404 ошибки"""
         def test_page_not_found(self):
             response = self.client.get('/nonexist-page/')
-            self.assertEqual(response.status_code, 404)
+            self.assertEqual(response.status_code, HTTP_404_NOT_FOUND)
             self.assertTemplateUsed(response, 'core/404.html')
 
         def test_csrf_failure(self):
             response = self.client.get('core/403csrf.html')
-            self.assertEqual(response.status_code, 403)
+            self.assertEqual(response.status_code, HTTP_403_FORBIDDEN)
             self.assertTemplateUsed(response, 'core/403csrf.html')
 
 
