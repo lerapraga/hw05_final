@@ -2,7 +2,7 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# SECRET_KEY in gitignore
+SECRET_KEY = 'secret_key.py'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False  # turned off
