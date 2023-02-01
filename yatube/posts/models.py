@@ -1,3 +1,4 @@
+from xml.dom import ValidationErr
 from django.contrib.auth import get_user_model
 from django.db import models
 
@@ -85,5 +86,14 @@ class Follow(models.Model):
         constraints = (
             models.UniqueConstraint(
                 fields=['user', 'author'],
-                name='unique_following')
+                name='unique_following'),
         )
+
+    def no_self_follow(self):
+        return (
+            f'Пользователь {self.user} подписан на {self.author}'
+        )
+
+    def clean(self):
+        if self.user == self.author:
+            raise ValidationErr('нельзя подписаться на себя')

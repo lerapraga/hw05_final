@@ -2,11 +2,10 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'z4lg&7w#v(_c9%(=8!a*8n3!k6t)53r!ekpjk-tg5r5!yxe28^'
+# SECRET_KEY in gitignore
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False  # turned off
 
 ALLOWED_HOSTS = [
     'localhost',

@@ -1,7 +1,9 @@
 from django.contrib.auth import get_user_model
 from django.test import Client, TestCase
 
-from posts.models import Group, Post
+from ..models import Group, Post
+# так нужно было? Я не могу сюда импортить
+# новые модули) они же не используются!
 
 User = get_user_model()
 
