@@ -33,7 +33,7 @@ def group_posts(request, slug):
     text = 'Здесь будет информация о группах проекта Yatube'
     description = 'Небольшое описание'
     post_list = Post.objects.all()
-    paginator = Paginator(post_list, 2)
+    paginator = Paginator(post_list, 10)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     context = {
@@ -47,7 +47,7 @@ def group_posts(request, slug):
 
 def profile(request, username):
     author = get_object_or_404(User, username=username)
-    post_list = Post.objects.all()
+    post_list = author.posts.all()
     paginator = Paginator(post_list, 2)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)

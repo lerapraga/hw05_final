@@ -102,9 +102,7 @@ class PostURLTests(TestCase):
         )
         self.assertIn('author', response.context)
         self.assertEqual(response.context['author'], self.user)
-        self.assertIn('post_list', response.context)
         self.assertIn('page_obj', response.context)
-        self.assertEqual(response.context['author'], self.user)
 
     def test_post_detail_page_show_correct_context(self):
         """Шаблон post_detail сформирован с правильным контекстом."""

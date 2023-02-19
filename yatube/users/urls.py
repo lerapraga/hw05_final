@@ -20,7 +20,7 @@ urlpatterns = [
     ),
 
     # change password urls
-    path('password-change/',
+    path('password_change/',
          auth_views.PasswordChangeView.as_view(),
          name='password_change'),
     path('password_change/done/',
